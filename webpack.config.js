@@ -4,10 +4,11 @@
 var path = require('path')
 var htmlWebpackPlugin = require('html-webpack-plugin')
 var webpack = require('webpack')
+var OpenBrowserPlugin = require('open-browser-webpack-plugin')
 
 module.exports = {
     entry: {
-        'index': ['./src/app.js', './src/app2.js']
+        'index': ['./src/app.js']
     },
     output: {
         path: path.resolve(__dirname, 'dist'), // __dirname + '/dist'
@@ -79,6 +80,7 @@ module.exports = {
                 minijs: true
             }
         }),
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+        new OpenBrowserPlugin({ url: 'http://localhost:8080' })
     ]
 }
