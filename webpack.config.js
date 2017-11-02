@@ -26,15 +26,16 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: [
-                    {
-                        loader: 'style-loader'
-                    },
+                    'style-loader',
                     {
                         loader: 'css-loader',
                         options: {
                             minimize: true,
                             camelCase: true
                         }
+                    },
+                    {
+                        loader: 'postcss-loader'
                     }
                 ]
             },
@@ -81,6 +82,6 @@ module.exports = {
             }
         }),
         new webpack.HotModuleReplacementPlugin(),
-        new OpenBrowserPlugin({ url: 'http://localhost:8080' })
+        new OpenBrowserPlugin({url: 'http://localhost:8080'})
     ]
 }

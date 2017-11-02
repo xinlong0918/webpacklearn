@@ -1,3 +1,5 @@
-.indexheader{
-    background: #0f0;
+#app{
+    color: #0f0;
+    font-size: .32rem;
+    display: flex;
 }

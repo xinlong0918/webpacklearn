@@ -1,7 +1,8 @@
 /**
  * Created by fan.xinlong on 2017/10/18.
  */
-import './components/home/home.less'
+import './style/app.css'
+import home from './components/home/home'
 function App() {
 }
 new App();
