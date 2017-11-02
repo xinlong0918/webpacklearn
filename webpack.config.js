@@ -79,6 +79,6 @@ module.exports = {
                 minijs: true
             }
         }),
-        new webpack.optimize.UglifyJsPlugin()
+        new webpack.HotModuleReplacementPlugin()
     ]
 }
