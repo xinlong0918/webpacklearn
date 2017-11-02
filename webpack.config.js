@@ -35,7 +35,7 @@ module.exports = {
                         }
                     },
                     {
-                        loader: 'postcss-loader'
+                        loader: 'postcss-loader' /* postcss+autoprefixer 参考： http://blog.csdn.net/qq_20334295/article/details/74933034 */
                     }
                 ]
             },
