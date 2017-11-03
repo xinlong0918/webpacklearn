@@ -18,6 +18,12 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.html$/,
+                use: {
+                    loader: 'html-loader'
+                }
+            },
+            {
                 test: /\.js$/,
                 use: {
                     loader: 'babel-loader'
@@ -48,10 +54,11 @@ module.exports = {
                     {
                         loader: 'css-loader',
                         options: {
-                            minimize: true,
+                            minimize: true, // 压缩
                             camelCase: true
                         }
                     },
+                    'postcss-loader',
                     {
                         loader: 'less-loader'
                     }
@@ -73,12 +80,12 @@ module.exports = {
             template: './index.html',
             filename: 'index.html',
             title: '123',
-            inject: 'head',
+            inject: 'body',
             minify: {
                 collapseWhitespace: true,
                 removeComments: true,
                 minifyCSS: true,
-                minijs: true
+                minifyJS: true
             }
         }),
         new webpack.HotModuleReplacementPlugin(),
